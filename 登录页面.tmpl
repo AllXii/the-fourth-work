@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<style>
+    .login{
+        margin-left: 650px;
+        margin-top: 250px;
+    }
+    .register{
+        margin-left: 650px;
+    }
+</style>
+<body style="background-color: ghostwhite">
+<script>
+    {{ $flag := .flag }}
+    {{ if eq $flag 1}}
+    alert("用户名不存在")
+    {{end}}
+    {{ if eq $flag 0}}
+    {{end}}
+    {{ if eq $flag 2}}
+    alert("密码错误,请重新输入")
+    {{end}}
+</script>
+<div class="login">
+    <h1>Login</h1>
+    <form action="/user/login" method="post">
+        <input type="text" name="username" placeholder="用户名" required="required"><br>
+        <input type="password" name="password" placeholder="密  码" required="required"><br>
+        <input style="background-color: mediumseagreen; color: white" type="submit" value="登录"><br>
+    </form>
+</div>
+<div class="register">
+    <a href="register"><button>注册</button></a><br>
+</div>
+</body>
+</html>

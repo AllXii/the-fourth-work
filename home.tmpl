@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<style>
+    .menu{
+        margin-left: 45%;
+    }
+    .main{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+</style>
+<body style="background-color: ghostwhite">
+    <div class="menu">
+        <h1>home</h1>
+    </div>
+    <div class="main">
+        欢迎{{.username }}
+
+        <form action="" method="post">
+            发布你的文章:<br> <textarea cols="8" rows="50" name="article" required="required" style="width: 900px; height: 50px"></textarea><br>
+            <input type="submit" value="发布文章">
+        </form>
+
+        <hr>
+        <div class="list" style="background-color: whitesmoke">
+            <p>我的文章:</p>
+            <div class="item">
+                <div class="Info">发布于：{{ .datetime }} | 作者：{{ .username }}</div>
+                <div class="article">
+                    {{ .article }}
+                </div>
+            </div>
+            <p> 你共发布了{{.flag}}个文章！ </p>
+        </div>
+
+    </div>
+</body>
+</html>

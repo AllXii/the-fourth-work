@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<style>
+    .register{
+        margin-left: 650px;
+        margin-top: 250px;
+    }
+</style>
+<body style="background-color: ghostwhite">
+<script>
+    {{ $flag := .flag }}
+    {{ if eq $flag 1}}
+    alert("用户名重复,注册失败")
+    {{end}}
+</script>
+<div class="register">
+    <h1>Register</h1>
+    <form action="" method="post">
+        请输入你的用户名:<br><input type="text" name="username" required="required"><br>
+        请输入你的密码  :<br><input type="password" name="password" required="required"><br>
+        <input type="submit" value="注册">
+    </form>
+</div>
+</body>
+</html>
